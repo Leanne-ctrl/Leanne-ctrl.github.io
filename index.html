@@ -1,8 +1,8 @@
 <!doctype html>
 <!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Read Only by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
   <head>
@@ -13,6 +13,208 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Personnalisation des couleurs -->
+    <style>
+      /* 1. Fond bleu uniforme pour TOUT le panneau latéral */
+      #header {
+        background-color: #1e3a8a !important; /* Bleu foncé */
+      }
+
+      /* 2. Nom et description bien visibles (en blanc pur) */
+      #header h1, #header h1 a {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+      }
+      #header p {
+        color: #e2e8f0 !important; /* Blanc cassé / gris très clair */
+      }
+      /* 3. Barre supérieure mobile et bouton menu */
+      #titleBar {
+        background-color: #1e3a8a !important;
+        height: 4.5em !important;
+        line-height: 4.5em !important;
+        z-index: 10001 !important;
+      }
+
+      #titleBar .title {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        line-height: 4.5em !important;
+        padding: 0 1.5em !important;
+      }
+
+      /* Bouton burger cliquable */
+      #titleBar .toggle,
+      #header .toggle {
+        background-color: #1e3a8a !important;
+        height: 4.5em !important;
+        width: 4.5em !important;
+        top: 0 !important;
+        right: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 10002 !important;
+      }
+
+      /* Les 3 lignes blanches */
+      #titleBar .toggle:before,
+      #header .toggle:before {
+        content: '' !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        margin-left: -13px !important;
+        margin-top: -1px !important;
+        width: 26px !important;
+        height: 2px !important;
+        background: #ffffff !important;
+        box-shadow: 0 -7px 0 0 #ffffff, 0 7px 0 0 #ffffff !important;
+      }
+
+      /* Assure que le menu s'affiche par-dessus quand il s'ouvre */
+      #header {
+        z-index: 10003 !important;
+      }
+
+      /* 4. Menu : texte blanc pur pour TOUS les liens et états */
+      #nav ul {
+        border: none !important;
+      }
+
+      #nav ul li {
+        border: none !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Liens normaux */
+      #nav a,
+      #nav ul li a,
+      #nav > ul > li > a {
+        background-color: #1e3a8a !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important; /* Neutralise les styles système / iOS / Safari */
+        border: none !important;
+        box-shadow: none !important;
+        display: block !important;
+      }
+
+      /* Lien actif (sélectionné), survolé ou cliqué */
+      #nav a.active,
+      #nav a:hover,
+      #nav a:focus,
+      #nav a:active,
+      #nav ul li a.active,
+      #nav ul li a:hover,
+      #nav ul li a:focus,
+      #nav ul li a:active,
+      #nav > ul > li > a.active,
+      #nav > ul > li > a:hover,
+      #nav > ul > li > a:focus,
+      #nav > ul > li > a:active {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+
+      /* Empêche le texte de devenir beige si le texte est surligné/sélectionné à la souris */
+      #nav *::selection {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+      }
+
+      /* Onglet actif (« À propos »), au survol, au clic et au focus : fond bleu clair, texte blanc pur */
+      #nav ul li a.active,
+      #nav ul li a.active:hover,
+      #nav ul li a.active:focus,
+      #nav ul li a:hover,
+      #nav ul li a:focus,
+      #nav ul li a:active {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+
+      /* Sécurité supplémentaire : s'assurer qu'aucun sous-élément du lien actif ne change de couleur */
+      #nav ul li a.active *,
+      #nav ul li a:hover * {
+        color: #ffffff !important;
+      }
+
+      /* 5. Titres du contenu principal (à gauche) */
+      #main h2, #main h3, #main h4 {
+        color: #1e3a8a !important;
+      }
+
+      /* 6. Mettre les icônes rondes en bleu */
+      .feature-icons li::before {
+        background-color: #1e3a8a !important; /* Bleu foncé */
+        box-shadow: inset 0 0 0 1px #1e3a8a !important; /* Bordure interne */
+        color: #ffffff !important; /* Icône blanche */
+      }
+
+      /* 7. Photo ronde à droite du texte */
+      .photo-profil-droite {
+        float: right;
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 2em;
+        margin-bottom: 1.5em;
+        border: 4px solid #1e3a8a;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      #one .container::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      /* Icônes de réseaux sociaux du panneau latéral en blanc pur */
+      #header footer .icons li a {
+        color: #ffffff !important;
+        opacity: 0.9;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      /* Au survol de la souris sur les icônes */
+      #header footer .icons li a:hover {
+        color: #ffffff !important;
+        opacity: 1;
+      }
+      /* Bouton Envoyer un email en bleu */
+      input[type="submit"].primary,
+      input[type="reset"].primary,
+      input[type="button"].primary,
+      button.primary,
+      .button.primary {
+        background-color: #1e3a8a !important; /* Même bleu foncé */
+        color: #ffffff !important;
+        box-shadow: none !important;
+      }
+
+      /* Au survol de la souris */
+      input[type="submit"].primary:hover,
+      input[type="reset"].primary:hover,
+      input[type="button"].primary:hover,
+      button.primary:hover,
+      .button.primary:hover {
+        background-color: #2563eb !important; /* Bleu un peu plus clair au survol */
+      }
+
+
+    </style>
   </head>
   <body class="is-preload">
     <!-- Header -->
@@ -23,8 +225,7 @@
         /></span>
         <h1 id="logo"><a href="#">Léanne Archambault</a></h1>
         <p>
-          Étudiante à la maîtrise en sience politique <br />
-          Auxilaire de recherche 
+          Étudiante à la maîtrise en science politique <br /> Auxiliaire de recherche 
         </p>
       </header>
       <nav id="nav">
@@ -38,29 +239,18 @@
       <footer>
         <ul class="icons">
           <li>
-            <!-- Vous pouvez mettre en hyperlien vos reseaux sociaux en modifiant la valeur de href-->
-            <a href="https://x.com/MLB/" class="icon brands fa-twitter"
-              ><span class="label">Twitter</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-facebook-f"
+            <a href="https://www.facebook.com/share/1JUo8uCAu4/?mibextid=wwXIfr" target="_blank" class="icon brands fa-facebook-f"
               ><span class="label">Facebook</span></a
             >
           </li>
           <li>
-            <a href="#" class="icon brands fa-linkedin"
-              ><span class="label">LinkedIn</span></a
+            <a href="https://www.instagram.com/jeangouesse.raide/" target="_blank" class="icon brands fa-instagram"
+              ><span class="label">Instagram</span></a
             >
           </li>
           <li>
-            <a href="#" class="icon brands fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon solid fa-envelope"
-              ><span class="label">Email</span></a
+            <a href="mailto:learc4@ulaval.ca" class="icon solid fa-envelope"
+              ><span class="label">Courriel</span></a
             >
           </li>
         </ul>
@@ -77,10 +267,12 @@
             <img src="images/bg.jpeg" alt="" />
           </div>
           <div class="container">
+
             <header class="major">
               <h2>Léanne Archambault</h2>
-              <p>Étudiante à la maîtrise en science politique.</p>
+              <p>Étudiante à la maîtrise en science politique</p>
             </header>
+            
             <p>
               Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus
               col. Commodo id in arcu ante lorem ipsum sed accumsan erat
@@ -146,34 +338,24 @@
 
         <!-- Four -->
         <section id="four">
-          <div class="container">
-            <h3>Me joindre</h3>
-            <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non.
-            </p>
-            <div class="row gtr-uniform">
-              <div class="col-12">
-                <!-- Vous pouvez mettre votre email ici au lieu de your-email@example.com -->
+          <div class="col-12">
                 <a
-                  href="mailto:your-email@example.com?subject=Sujet&body=Votre message ici."
+                  href="https://outlook.office.com/mail/deeplink/compose?to=learc4@ulaval.ca"
+                  target="_blank"
                   class="button primary"
                 >
                   Envoyer un email
                 </a>
               </div>
-            </div>
           </div>
         </section>
-        <!-- Five -->
-        <!-- -->
       </div>
 
       <!-- Footer -->
       <section id="footer">
         <div class="container">
           <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved.</li>
+            <li>&copy; Léanne Archambault. All rights reserved.</li>
             <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
           </ul>
         </div>
@@ -190,4 +372,3 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
-
