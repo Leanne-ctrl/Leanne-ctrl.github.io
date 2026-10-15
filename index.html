@@ -378,18 +378,22 @@
         <!-- Séparateur -->
         <hr class="separateur-bordeaux" />
 
-      <!-- Three -->
+     <!-- Three -->
         <section id="three">
           <div class="container">
             <h3>Mon CV</h3>
-            <div style="text-align: center; margin-top: 1.5em;">
-              <a href="cv.html" style="border-bottom: none; display: inline-block;">
-                <img
-                  src="images/cv-apercu.png"
-                  alt="Curriculum Vitae de Léanne Archambault"
-                  style="max-width: 600px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); border: 1px solid #E5DFD4;"
-                />
-              </a>
+            <p>
+              Curriculum vitae académique généré avec Quarto. Vous pouvez le parcourir ci-dessous ou 
+              <a href="cv.html" target="_blank" style="color: #6B1D1D; font-weight: 600;">l'ouvrir en plein écran</a>.
+            </p>
+            
+            <!-- Cadre qui affiche directement cv.html -->
+            <div style="width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.12); border: 1px solid #E5DFD4; margin-top: 1.5em; background: #ffffff;">
+              <iframe 
+                src="cv.html" 
+                title="Curriculum Vitae Quarto" 
+                style="width: 100%; height: 750px; border: none; display: block;">
+              </iframe>
             </div>
           </div>
         </section>
