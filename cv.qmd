@@ -1,0 +1,85 @@
+---
+title: "Untitled"
+format: html
+---
+---
+title: "Curriculum Vitae"
+author: "Léanne Archambault"
+subtitle: "Étudiante à la maîtrise en science politique à l'Université Laval"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "Sommaire"
+---
+
+**Courriel :** [learc4@ulaval.ca](mailto:learc4@ulaval.ca) | **Localisation :** Québec, Canada
+
+---
+
+## Études
+
+- **Candidate à la maîtrise en science politique** (Automne 2026 – Présent)  
+  *Université Laval* — Sous la direction d'Alexandre Gajevic Sayegh
+- **Formation à l'École interdisciplinaire des outils méthodologiques** (Été 2026)  
+  *Université Laval*
+- **Baccalauréat en science politique** (Septembre 2023 – Mai 2026)  
+  *Université Laval*  
+  *Mention d'honneur de la doyenne – 2024-2025*
+- **Diplôme d'études collégiales en sciences humaines (Profil Monde)** (2021 – 2023)  
+  *Cégep de Lanaudière à Joliette*  
+  *Bourse Desjardins Mérite obtenue*
+
+---
+
+## Expérience de travail récente
+
+### Auxiliaire de recherche — Observatoire de Recherche en Économie Verte (OREV)
+*Supervision : Alexandre Gajevic Sayegh* | **Janvier 2026 – Présent**
+
+- Recherches et analyse de documentation, discours, presse et politiques publiques.
+- Suivi de l'action gouvernementale.
+- Rédaction et correction d'articles.
+- Collaboration avec le département de science politique.
+
+### Auxiliaire de recherche — Chaire de recherche en EPI
+*Supervision : Jean-Frédéric Morin* | **Mai 2026 – Présent**
+
+- Recherches et analyse de documentation, discours et politiques publiques.
+- Rédaction et révision d'articles scientifiques.
+- Collaboration avec le département de science politique et participation à l'amélioration du site Web / bases de données (IEADB).
+
+---
+
+## Compétences & Outils
+
+- **Analyse & Recherche :** Rigueur méthodologique acquise en science politique, analyse de documentation et synthèse d'informations complexes.
+- **Gestion de projet :** Expérience en développement de projet, respect des échéanciers et coordination d'initiatives.
+- **Communication & Vulgarisation :** Plaidoyer et sensibilisation, tutorat académique et transmission des connaissances.
+- **Langues :** Français (avancé/langue maternelle) et Anglais.
+
+---
+
+## Qualités
+
+- Organisée, rigoureuse et soucieuse des détails.
+- Ouverture d'esprit, écoute et sens développé de la débrouillardise.
+- Grande capacité d'adaptation et esprit collaboratif.
+
+---
+
+## Intérêts de recherche
+
+- Justice climatique et politiques environnementales.
+- Politiques publiques et influences politiques.
+- Enjeux des communautés autochtones.
+- Comportement électoral et participation citoyenne (Canada et Québec).
+
+---
+
+## Implications pertinentes
+
+- **Organisation d'événement académique :** Colloque *« La philosophie politique pour un monde meilleur »* (Mai 2026).
+- **Accompagnement et tutorat :** Soutien pédagogique auprès d'élèves en français et adaptation des méthodes d'apprentissage.
+- **Engagement bénévole :** Expériences diverses (collectes de fonds, événements communautaires).
+- **Participation aux Jeux des sciences humaines 2023 :** Gagnante de l'édition 2023.

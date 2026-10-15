@@ -14,40 +14,56 @@
     />
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- Personnalisation des couleurs -->
+    <!-- Import de la police Serif éditoriale pour les titres -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Personnalisation des couleurs : Vibe "Bold Red & Warm Editorial" -->
     <style>
-      /* 1. Fond bleu uniforme pour TOUT le panneau latéral */
-      #header {
-        background-color: #1e3a8a !important; /* Bleu foncé */
+      /* 0. Fond général de la page */
+      body, #wrapper, #main {
+        background-color: #F7F4EE !important; /* Crème / Beige lin chaleureux */
+        color: #2B2625 !important;            /* Texte gris très foncé / café */
       }
 
-      /* 2. Nom et description bien visibles (en blanc pur) */
+      /* 1. Panneau latéral : Rouge bordeaux profond */
+      #header {
+        background-color: #6B1D1D !important; /* Rouge bordeaux riche */
+        z-index: 10003 !important;
+      }
+
+      /* 2. Nom et description dans le menu */
       #header h1, #header h1 a {
-        color: #ffffff !important;
+        color: #FFFFFF !important;
+        font-family: 'Playfair Display', Georgia, serif !important;
         font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
       }
       #header p {
-        color: #e2e8f0 !important; /* Blanc cassé / gris très clair */
+        color: #F3DDD7 !important; /* Rose poudré / crème très clair */
       }
+
       /* 3. Barre supérieure mobile et bouton menu */
       #titleBar {
-        background-color: #1e3a8a !important;
+        background-color: #6B1D1D !important;
         height: 4.5em !important;
         line-height: 4.5em !important;
         z-index: 10001 !important;
       }
 
       #titleBar .title {
-        color: #ffffff !important;
+        color: #FFFFFF !important;
+        font-family: 'Playfair Display', Georgia, serif !important;
         font-weight: 700 !important;
         line-height: 4.5em !important;
         padding: 0 1.5em !important;
       }
 
-      /* Bouton burger cliquable */
+      /* Bouton burger */
       #titleBar .toggle,
       #header .toggle {
-        background-color: #1e3a8a !important;
+        background-color: #6B1D1D !important;
         height: 4.5em !important;
         width: 4.5em !important;
         top: 0 !important;
@@ -58,7 +74,7 @@
         z-index: 10002 !important;
       }
 
-      /* Les 3 lignes blanches */
+      /* Lignes du bouton burger */
       #titleBar .toggle:before,
       #header .toggle:before {
         content: '' !important;
@@ -69,24 +85,17 @@
         margin-top: -1px !important;
         width: 26px !important;
         height: 2px !important;
-        background: #ffffff !important;
-        box-shadow: 0 -7px 0 0 #ffffff, 0 7px 0 0 #ffffff !important;
+        background: #FFFFFF !important;
+        box-shadow: 0 -7px 0 0 #FFFFFF, 0 7px 0 0 #FFFFFF !important;
       }
 
-      /* Assure que le menu s'affiche par-dessus quand il s'ouvre */
-      #header {
-        z-index: 10003 !important;
-      }
-
-      /* 4. Menu : texte blanc pur pour TOUS les liens et états */
+      /* 4. Navigation et liens du menu */
       #nav ul {
         border: none !important;
       }
 
       #nav ul li {
         border: none !important;
-        border-top: none !important;
-        border-bottom: none !important;
         box-shadow: none !important;
       }
 
@@ -94,15 +103,17 @@
       #nav a,
       #nav ul li a,
       #nav > ul > li > a {
-        background-color: #1e3a8a !important;
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important; /* Neutralise les styles système / iOS / Safari */
+        background-color: #6B1D1D !important;
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
         border: none !important;
         box-shadow: none !important;
         display: block !important;
+        font-weight: 500;
+        letter-spacing: 0.05em;
       }
 
-      /* Lien actif (sélectionné), survolé ou cliqué */
+      /* Lien actif (sélectionné), survol ou focus */
       #nav a.active,
       #nav a:hover,
       #nav a:focus,
@@ -115,127 +126,102 @@
       #nav > ul > li > a:hover,
       #nav > ul > li > a:focus,
       #nav > ul > li > a:active {
-        background-color: #2563eb !important;
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important;
+        background-color: #8B2626 !important; /* Rouge un peu plus éclatant */
+        color: #FFFFFF !important;
+        -webkit-text-fill-color: #FFFFFF !important;
         border: none !important;
         box-shadow: none !important;
         outline: none !important;
       }
 
-      /* Empêche le texte de devenir beige si le texte est surligné/sélectionné à la souris */
-      #nav *::selection {
-        background-color: #2563eb !important;
-        color: #ffffff !important;
-      }
-
-      /* Onglet actif (« À propos »), au survol, au clic et au focus : fond bleu clair, texte blanc pur */
-      #nav ul li a.active,
-      #nav ul li a.active:hover,
-      #nav ul li a.active:focus,
-      #nav ul li a:hover,
-      #nav ul li a:focus,
-      #nav ul li a:active {
-        background-color: #2563eb !important;
-        color: #ffffff !important;
-        border: none !important;
-        border-top: none !important;
-        border-bottom: none !important;
-        box-shadow: none !important;
-        outline: none !important;
-      }
-
-      /* Sécurité supplémentaire : s'assurer qu'aucun sous-élément du lien actif ne change de couleur */
-      #nav ul li a.active *,
-      #nav ul li a:hover * {
-        color: #ffffff !important;
-      }
-
-      /* 5. Titres du contenu principal (à gauche) */
+      /* 5. Titres du contenu principal (Typographie Serif Élégante) */
       #main h2, #main h3, #main h4 {
-        color: #1e3a8a !important;
+        color: #6B1D1D !important; /* Titres en rouge bordeaux */
+        font-family: 'Playfair Display', Georgia, serif !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.02em !important;
       }
 
-      /* 6. Mettre les icônes rondes en bleu */
+      #main header.major h2 {
+        font-size: 2.6em !important;
+        margin-bottom: 0.2em !important;
+      }
+
+      #main header.major p {
+        font-size: 1.15em !important;
+        font-style: italic !important;
+        font-weight: 500 !important;
+        color: #7A534B !important; /* Brun rosé / terracotta doux */
+        margin-bottom: 1.5em !important;
+      }
+
+      /* 6. Paragraphes : nets, justifiés et agréables à lire */
+      #main p {
+        text-align: justify;
+        text-justify: inter-word;
+        line-height: 1.8;
+        font-size: 1.05em;
+        color: #3D3534 !important; /* Gris anthracite chaud */
+        margin-bottom: 1.4em;
+        hyphens: auto;
+      }
+
+      /* 7. Boîtes et bordures douces */
+      #main > section {
+        border-top: solid 1px #E5DFD4 !important;
+      }
+
+      /* 8. Icônes rondes en bordeaux élégant */
       .feature-icons li::before {
-        background-color: #1e3a8a !important; /* Bleu foncé */
-        box-shadow: inset 0 0 0 1px #1e3a8a !important; /* Bordure interne */
-        color: #ffffff !important; /* Icône blanche */
+        background-color: #6B1D1D !important;
+        box-shadow: inset 0 0 0 1px #6B1D1D !important;
+        color: #FFFFFF !important;
       }
 
-      /* 7. Photo ronde à droite du texte */
-      .photo-profil-droite {
-        float: right;
-        width: 170px;
-        height: 170px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-left: 2em;
-        margin-bottom: 1.5em;
-        border: 4px solid #1e3a8a;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      }
-
-      #one .container::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      /* Icônes de réseaux sociaux du panneau latéral en blanc pur */
+      /* 9. Icônes de réseaux sociaux du panneau latéral */
       #header footer .icons li a {
-        color: #ffffff !important;
+        color: #FFFFFF !important;
         opacity: 0.9;
         transition: opacity 0.2s ease, transform 0.2s ease;
       }
 
-      /* Au survol de la souris sur les icônes */
       #header footer .icons li a:hover {
-        color: #ffffff !important;
+        color: #F3DDD7 !important;
         opacity: 1;
       }
-      /* Bouton Envoyer un email en bleu */
+
+      /* 10. Boutons d'action : Bordeaux profond avec survol bordeaux éclatant */
       input[type="submit"].primary,
       input[type="reset"].primary,
       input[type="button"].primary,
       button.primary,
       .button.primary {
-        background-color: #1e3a8a !important; /* Même bleu foncé */
-        color: #ffffff !important;
+        background-color: #6B1D1D !important;
+        color: #FFFFFF !important;
         box-shadow: none !important;
+        border-radius: 4px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.05em !important;
+        transition: background-color 0.25s ease !important;
       }
 
-      /* Au survol de la souris */
       input[type="submit"].primary:hover,
       input[type="reset"].primary:hover,
       input[type="button"].primary:hover,
       button.primary:hover,
       .button.primary:hover {
-        background-color: #2563eb !important; /* Bleu un peu plus clair au survol */
-      }
-      /* Amélioration de la typographie et de l'alignement du texte */
-      #main p {
-        text-align: justify;          /* Aligne le texte à gauche et à droite de façon égale */
-        text-justify: inter-word;     /* Équilibre les espaces entre les mots */
-        line-height: 1.75;            /* Aère la lecture entre les lignes */
-        font-size: 1.05em;            /* Taille légèrement augmentée pour plus de confort */
-        color: #334155 !important;    /* Gris ardoise foncé pour un meilleur contraste */
-        margin-bottom: 1.4em;         /* Espacement régulier entre chaque paragraphe */
-        hyphens: auto;                /* Coupe proprement les longs mots en fin de ligne si nécessaire */
+        background-color: #8B2626 !important;
       }
 
-      /* Titres de sous-section bien espacés */
-      #main header.major h2 {
-        margin-bottom: 0.25em !important;
+      /* 11. Pied de page (Footer) */
+      #footer {
+        background-color: #EFEAE1 !important;
+        color: #7A534B !important;
+        border-top: 1px solid #E5DFD4 !important;
       }
-
-      #main header.major p {
-        font-size: 1.2em;
-        font-weight: 500;
-        color: #64748b !important;
-        margin-bottom: 1.5em !important;
+      #footer a {
+        color: #6B1D1D !important;
       }
-
-
     </style>
   </head>
   <body class="is-preload">
@@ -340,29 +326,20 @@
           </div>
         </section>
 
-        <!-- Three -->
+       <!-- Three -->
         <section id="three">
           <div class="container">
             <h3>Mon CV</h3>
             <p>
-              Integer eu ante ornare amet commetus vestibulum blandit integer in
-              curae ac faucibus integer non. Adipiscing cubilia elementum
-              integer. Integer eu ante ornare amet commetus.
+              Consultez mon curriculum vitae académique complet, détaillant mes recherches, ma formation à l'Université Laval et mes compétences.
             </p>
-            <div class="features">
-              <article>
-                <a href="#" class="image"
-                  ><img src="images/pic01.jpg" alt=""
-                /></a>
-                <div class="inner">
-                  <h4>Possibly broke spacetime</h4>
-                  <p>
-                    Integer eu ante ornare amet commetus vestibulum blandit
-                    integer in curae ac faucibus integer adipiscing ornare amet.
-                  </p>
-                </div>
-              </article>
-            </div>
+            <ul class="actions">
+              <li>
+                <a href="cv.html" class="button primary">
+                  Consulter mon CV complet 
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
 
