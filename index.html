@@ -222,6 +222,38 @@
       #footer a {
         color: #6B1D1D !important;
       }
+      /* Disposition pour afficher l'aperçu du CV à côté du texte */
+      .cv-layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5em;
+        align-items: center;
+        margin-top: 1.5em;
+      }
+
+      .cv-image-box {
+        flex: 0 0 280px;
+        max-width: 280px;
+      }
+
+      .cv-image-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+        box-shadow: 0 10px 25px rgba(107, 29, 29, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+        border: 1px solid #E5DFD4;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cv-image-box a:hover img {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(107, 29, 29, 0.25);
+      }
+
+      .cv-content-box {
+        flex: 1 1 300px;
+      }
     </style>
   </head>
   <body class="is-preload">
@@ -326,20 +358,19 @@
           </div>
         </section>
 
-       <!-- Three -->
+      <!-- Three -->
         <section id="three">
           <div class="container">
             <h3>Mon CV</h3>
-            <p>
-              Consultez mon curriculum vitae académique complet, détaillant mes recherches, ma formation à l'Université Laval et mes compétences.
-            </p>
-            <ul class="actions">
-              <li>
-                <a href="cv.html" class="button primary">
-                  Consulter mon CV complet 
-                </a>
-              </li>
-            </ul>
+            <div style="text-align: center; margin-top: 1.5em;">
+              <a href="cv.html" style="border-bottom: none; display: inline-block;">
+                <img
+                  src="images/cv-apercu.png"
+                  alt="Curriculum Vitae de Léanne Archambault"
+                  style="max-width: 600px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); border: 1px solid #E5DFD4;"
+                />
+              </a>
+            </div>
           </div>
         </section>
 
