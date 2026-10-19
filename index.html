@@ -263,7 +263,53 @@
         margin: 3.5em auto;
         width: 80%;
       }
+      /* Barre de progression de défilement */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #6B1D1D;
+  width: 0%;
+  z-index: 100005; /* Au-dessus du header et de la barre mobile */
+  transition: width 0.1s ease-out;
+}
+/* Bouton retour en haut */
+#back-to-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 46px;
+  height: 46px;
+  background-color: #6B1D1D;
+  color: #FFFFFF !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease, transform 0.2s ease;
+  z-index: 10000;
+  cursor: pointer;
+  border: none;
+}
+
+#back-to-top:hover {
+  background-color: #8B2626;
+  transform: translateY(-3px);
+  color: #FFFFFF !important;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
     </style>
+
   </head>
   <body class="is-preload">
     <!-- Header -->
@@ -427,6 +473,9 @@
         </div>
       </section>
     </div>
+    <button id="back-to-top" aria-label="Retourner en haut de la page">
+  <i class="icon solid fa-chevron-up"></i>
+</button>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -436,5 +485,33 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+      progressBar.style.width = progress + '%';
+    }
+  });
+</script>
+<script>
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
   </body>
 </html>
