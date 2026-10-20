@@ -263,6 +263,7 @@
         margin: 3.5em auto;
         width: 80%;
       }
+
       /* Barre de progression de défilement */
 #scroll-progress {
   position: fixed;
@@ -307,6 +308,48 @@
 #back-to-top.visible {
   opacity: 1;
   visibility: visible;
+}
+/* Animation des feuilles d'automne */
+.autumn-leaf {
+  position: fixed;
+  top: -60px;
+  pointer-events: none; /* Ne bloque aucun clic de la souris */
+  z-index: 99999;
+  will-change: transform, opacity;
+  animation-name: fallAnimation, swayAnimation;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fallAnimation {
+  0% {
+    top: -60px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 105vh;
+    opacity: 0;
+  }
+}
+
+@keyframes swayAnimation {
+  0% {
+    transform: translateX(0px) rotate(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateX(35px) rotate(45deg) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(-35px) rotate(-30deg) rotateY(360deg);
+  }
 }
     </style>
 
@@ -512,6 +555,52 @@
       top: 0,
       behavior: 'smooth'
     });
+  });
+</script>
+<!-- Effet : Chute unique de feuilles d'automne à l'ouverture -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Palette assortie à votre thème : bordeaux, cuivre, brun rosé, doré
+    const leafColors = ['#6B1D1D', '#8B2626', '#B85D36', '#D98236', '#8F4A33', '#C47C48'];
+    const leafCount = 18; // Nombre de feuilles
+
+    // Forme SVG fine d'une feuille d'érable / chêne stylisée
+    const leafSvg = (color) => `
+      <svg viewBox="0 0 40 40" width="100%" height="100%" fill="${color}">
+        <path d="M20,2 C23,8 30,10 32,16 C34,22 29,27 25,31 C23,33 21,37 20,40 C19,37 17,33 15,31 C11,27 6,22 8,16 C10,10 17,8 20,2 Z"/>
+      </svg>
+    `;
+
+    for (let i = 0; i < leafCount; i++) {
+      const leaf = document.createElement('div');
+      leaf.className = 'autumn-leaf';
+
+      // Dimensions variées (entre 18px et 34px)
+      const size = Math.floor(Math.random() * 16) + 18;
+      leaf.style.width = size + 'px';
+      leaf.style.height = size + 'px';
+
+      // Position horizontale aléatoire (0% à 95% de la largeur de l'écran)
+      leaf.style.left = (Math.random() * 95) + 'vw';
+
+      // Vitesse douce : durée de chute entre 7s et 12s
+      const fallDuration = (Math.random() * 5 + 7);
+      const swayDuration = (Math.random() * 2 + 2.5);
+      const delay = (Math.random() * 3.5); // Départ échelonné
+
+      leaf.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+      leaf.style.animationDelay = `${delay}s, ${delay}s`;
+
+      const randomColor = leafColors[Math.floor(Math.random() * leafColors.length)];
+      leaf.innerHTML = leafSvg(randomColor);
+
+      document.body.appendChild(leaf);
+
+      // Suppression automatique du DOM une fois la chute terminée
+      setTimeout(() => {
+        leaf.remove();
+      }, (fallDuration + delay + 0.5) * 1000);
+    }
   });
 </script>
   </body>
