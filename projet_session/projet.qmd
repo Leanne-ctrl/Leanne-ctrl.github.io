@@ -1,0 +1,46 @@
+---
+title: "Système électoral et représentation des femmes au parlement"
+subtitle: "POL-6078 : Outils numériques en sciences sociales"
+author: "Léanne Archambault"
+date: today
+date-format: long
+lang: fr
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+    code-fold: true
+    code-tools: true
+    embed-resources: true
+---
+
+# Question de recherche et hypothèse
+
+### Question de recherche
+*Les pays utilisant un scrutin proportionnel élisent-ils une plus grande proportion de femmes au parlement que les pays utilisant un scrutin majoritaire ?*
+
+### Revue de littérature et hypothèse
+*(Synthétise brièvement les travaux pertinents pour formuler ton hypothèse).*
+
+*Hypothèse ($H_1$) : *Les systèmes électoraux proportionnels favorisent significativement la représentation parlementaire des femmes comparativement aux systèmes majoritaires uninominaux.* 
+
+### Outils numériques mobilisés
+*(Présente les outils utilisés pour la recherche documentaire et la gestion bibliographique — ex. Zotero, Google Scholar, Elicit — en expliquant comment et pourquoi tu les as utilisés).*
+
+---
+
+# Collecte de données
+
+## Présentation des sources et de l'outil de collecte
+*(Décris la base de données, l'archive de presse ou l'outil utilisé — ex. Eureka, Factiva, données ouvertes gouvernementales, sondages — et la méthode d'extraction).*
+
+```{r}
+#| label: importation-donnees
+#| warning: false
+#| message: false
+
+# Exemple : chargement des données depuis le sous-dossier data/
+# library(tidyverse)
+# donnees <- read_csv("data/mes_donnees.csv")

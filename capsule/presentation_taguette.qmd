@@ -1,0 +1,135 @@
+---
+title: "Analyse critique de Taguette"
+subtitle: "Codage qualitatif libre et collaboratif en sciences sociales"
+author: "Léanne Archambault — POL-6078"
+date: "2026-12-02"
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    embed-resources: true
+    smaller: true
+    transition: fade
+    title-slide-attributes:
+      data-background-color: "#6B1D1D"
+---
+
+## 1. Point d'observation : l'essor des CAQDAS libres
+
+:::: {.columns}
+
+::: {.column width="65%"}
+- **Origine :** Développé à partir de 2018 par Rémi Rampin, Vicky Steeves et Sarah Appelt pour combler l'absence d'alternatives libres aux logiciels propriétaires coûteux (*NVivo*, *MAXQDA*).
+- **Évolution :** D'un simple script local à une application web multiplateforme (Windows, macOS, Linux) utilisable en local ou sur serveur collaboratif en temps réel.
+- **Cycle de la recherche :** S'inscrit aux étapes **Méthodologie** (codage et traitement du corpus) et **Résultats** (extraction des faits saillants).
+:::
+
+::: {.column width="35%"}
+![](cycle_recherche_outils_2026.png){.schema-cycle fig-align="center"}
+:::
+
+::::
+
+## 2. 6 critères de sélection d'un outil 
+
+| Critères | Taguette | NVivo | MAXQDA |
+| :--- | :--- | :--- | :--- |
+| **Accessibilité** | Gratuit, multiplateforme + version web | Coûteux (licences institutionnelles) | Coûteux (licences étudiantes ou annuelles) |
+| **Communauté** | Active (surtout recherche ouverte) | Très vaste (standard académique) | Très vaste (forte présence en Europe et sciences sociales) |
+| **Popularité** | Croissante (petits projets, mémoires) | Dominante en sciences sociales | Très populaire (méthodes mixtes) |
+| **Compatibilité** | Import : PDF, DOCX, TXT / Export : CSV, HTML, DOCX | Très large (audio, vidéo, réseaux sociaux, SPSS) | Très large (multimédia, données d'enquête, R, SPSS) |
+| **Transparence** | Code source ouvert (licence BSD-3) | Faible (logiciel propriétaire fermé) | Faible (logiciel propriétaire fermé) |
+| **Adaptabilité** | Faible (codage textuel pur uniquement) | Très élevée (requêtes complexes, matrices) | Très élevée (outils visuels, analyses mixtes quali-quanti) |
+
+## Démonstration pratique {.center .slide-demo background-color="#6B1D1D"}
+
+## Choix éditorial
+
+::: {.choix-editorial}
+**Choix éditorial :** Taguette est recommandé pour les corpus textuels de taille petite à moyenne et le travail d'équipe sans budget, mais il est insuffisant pour les analyses multimédias ou les méthodes mixtes complexes offertes par NVivo et MAXQDA.
+:::
+
+::: {.positif}
+**Positif :** Gratuit, simple à utiliser, exportation variée (DOCX, PDF, HTML, CSV, etc.).
+:::
+
+::: {.limites}
+**Limites :** Le copier-coller de texte donne parfois une mauvaise vue d'ensemble. Les titres ont un nombre maximal de caractères. 
+Principalement conçu pour annoter des fichiers téléchargeables (peu adapté aux articles de journaux en ligne ou aux plateformes électorales). = Taguette ne prend en charge que les fichiers textuels
+:::
+
+## Sources et références
+
+::: {.sources-box}
+* **Rampin, R., & Rampin, V. (2021).** Taguette: open-source qualitative data analysis. *Journal of Open Source Software*, 6(68), 3522. [https://doi.org/10.21105/joss.03522](https://doi.org/10.21105/joss.03522)
+* **Site officiel et documentation de Taguette :** [https://www.taguette.org](https://www.taguette.org)
+* **Dépôt du code source (GitLab) :** [https://gitlab.com/remram44/taguette](https://gitlab.com/remram44/taguette)
+* **Documentation comparative :** Lumivero (*NVivo*) et VERBI Software (*MAXQDA*), consultées en novembre 2026.
+:::
+
+<style>
+.reveal {
+  background-color: #FAF8F5;
+  color: #2B2B2B;
+}
+.reveal h2 {
+  color: #6B1D1D;
+  border-bottom: 3px solid #6B1D1D;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+.reveal strong {
+  color: #6B1D1D;
+}
+.reveal ul li::marker {
+  color: #6B1D1D;
+}
+.schema-cycle {
+  max-height: 460px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #E2D9D9;
+  box-shadow: 0 4px 12px rgba(107, 29, 29, 0.08);
+}
+.reveal table {
+  font-size: 0.78em;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(107, 29, 29, 0.08);
+}
+.reveal table th {
+  background-color: #6B1D1D !important;
+  color: #FFFFFF !important;
+  padding: 10px;
+}
+.reveal table td:nth-child(2) {
+  background-color: #F4E8E8;
+  font-weight: 500;
+}
+.reveal table tr:nth-child(even) td:not(:nth-child(2)) {
+  background-color: #F2EFE9;
+}
+.choix-editorial {
+  background-color: #F4E8E8;
+  border-left: 6px solid #6B1D1D;
+  padding: 14px 18px;
+  margin-top: 20px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9em;
+}
+.sources-box {
+  background-color: #FFFFFF;
+  border: 1px solid #E2D9D9;
+  border-left: 5px solid #6B1D1D;
+  padding: 18px 22px;
+  border-radius: 6px;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+.sources-box a {
+  color: #6B1D1D;
+  text-decoration: underline;
+}
+</style>
